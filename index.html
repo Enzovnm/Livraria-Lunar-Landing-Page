@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Livraria Lunar</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <script type="text/javascript">
+        /* Máscaras ER */
+        function mascara(o,f){
+            v_obj=o
+            v_fun=f
+            setTimeout("execmascara()",1)
+        }
+        function execmascara(){
+            v_obj.value=v_fun(v_obj.value)
+        }
+        function mtel(v){
+            v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
+            v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+            v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+            return v;
+        }
+        function id( el ){
+            return document.getElementById( el );
+        }
+        window.onload = function(){
+            id('telefone').onkeyup = function(){
+                mascara( this, mtel );
+            }
+        }
+        function mascaraData(campoData){
+              var data = campoData.value;
+              if (data.length == 2){
+                  data = data + '/';
+                  document.forms[0].data.value = data;
+      return true;              
+              }
+              if (data.length == 5){
+                  data = data + '/';
+                  document.forms[0].data.value = data;
+                  return true;
+              }
+         }
+
+
+         function valor(){
+            var valor = document.getElementById('data').value
+            var valorn = valor.toString().replace("." ,"-");
+
+                valor.value = valorn;
+
+            document.getElementById('data').value=valorn
+        }
+
+
+    
+</script>
+</head>
+<body>
+	<header id="header">
+        <div class="container__header">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#destaques">Destaques</a></li>
+                    <li><a href="#trabalhe_conosco">Trabalhe Conosco</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id="slide">
+        <div class="container__slide">
+            <div>
+                <h1>Livraria Lunar</h1>
+                <p>A chave para o conhecimento</p>
+            </div>        
+        </div>
+    </section>
+
+
+    <section id="sobre">
+        <div class="container__left">
+            <div class="sobre__livraria">
+                <span class="somos">Quem somos nós</span>
+                <h1>Sobre a livraria</h1>        
+                <p>A livraria Lunar é especializada em venda de livros há mais de 5 anos, sendo uma livraria totalmente digital e funcional oferecendo diversos gêneros de livros, de Ficção a Romance.</p>
+                <p>Na livraria lunar levamos o nosso lema a sério "A chave para o conhecimento por que acreditamos ser essencial para a humanidade".</p>
+            </div>
+        </div>
+        <div class="container__img"">
+            <img src="img/biblioteca1.jpg">
+        </div>
+    </section>
+
+
+    <section id="destaques">
+        <div class="container__destaques">
+            <h1>Destaques</h1>
+            <div class="cards">
+                <div class="box">
+                    <i class="bi bi-truck"></i>
+                    <h4>Entregas para todo Brasil</h4>
+                </div>
+                <div class="box">
+                    <i class="bi bi-book"></i>
+                    <h4>Melhores livros do mercado</h4>
+                </div>
+                <div class="box">
+                    <i class="bi bi-bag"></i>
+                    <h4>Melhores preços</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="trabalhe_conosco">
+        <div class="container__left">
+            <form action="trabalhe.php" method="POST" id="formtrabalhe">
+                <h1>Trabalhe Conosco</h1>
+                <input type="text" class="input" placeholder="Digite seu nome" required maxlength="70"  name="trabnome" id="nometrab">
+                <input type="email" class="input" placeholder="Digite seu email" maxlength="70" required minlength="5" name="trabemail" id="trabemail">
+                <input type="text" class="input" name="telefone" Onkeyup="mascara( this, mtel )" id="telefone" minlength="15" maxlength="15" required placeholder="Digite seu celular" id="trabcel">
+                <input  class="input" type="text" name="data" OnKeyUp="mascaraData(this);" minlength="10" maxlength="10" required placeholder="Digite sua data de Nascimento" id="data">
+                <textarea class="textarea" placeholder="Conte sobre você" minlength="20"  maxlength="1000" required name="trabmensagem" id="trabmensagem"></textarea>
+                <div class="botao"><input type="submit" onclick="valor()"></div>
+            </form>
+        </div>
+        <div class="container__img">
+            <img src="img/trabalhe_conosco.jpg">
+        </div>
+    </section>
+    <section id="contato">
+        <div class="container__left bg-white">
+            <div class="contato_livraria">
+                <span class="somos">Entre em</span>
+                <h1>Contato</h1>
+                <form method="POST" action="contato.php" id="formcontato">
+                <input type="text" class="input" placeholder="Digite seu nome" maxlength="70" required name="">
+                <input type="email" class="input" placeholder="Digite seu email" maxlength="70" required name="">    
+                <textarea class="textarea" minlength="10" placeholder="Mensagem" maxlength="150" required name=""></textarea>    
+                </form>
+            </div>
+        </div>
+        <div class="container__img">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.330470370855!2d-46.73065764869609!3d-23.520613565900515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8c1d371ec31%3A0x671c9325c275132e!2sETEC%20Professor%20Basilides%20de%20Godoy.!5e0!3m2!1spt-BR!2sbr!4v1623774581589!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+    <footer>
+        <div class="container__footer">
+            <div class="faq">
+                <h2>FAQ</h2>
+                <h4 style="margin-top: 10px;">Vocês têm o livro Arsène Lupin, O Ladrão De Casaca?</h4>
+                <h4 style="color:#ffdd00">Sim, possuímos a coleção completa.</h4>
+                <h4 style="margin-top: 10px;">Vocês vendem material escolar?</h4>
+                <h4 style="color:#ffdd00">Sim, vendemos diversos produtos como borrachas, canetas, etc.</h4>
+            </div>
+            <div class="footer__logo">
+                <img src="img/logo.png">
+            </div>
+            <div class="footer__info">
+                <h4><i class="bi bi-telephone"></i> (11) 3834-4111</h4>
+                <a href="#"><i class="bi bi-instagram"> livraria_lunar</i></a>
+                <a href="#"><i class="bi bi-geo-alt"></i> R. Guaipá, 678</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

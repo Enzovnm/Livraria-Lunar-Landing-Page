@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Oxygen:wght@300&family=Poppins:wght@100&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    overflow-x: hidden;
+}
+
+a,
+a:hover,
+a:active,
+a:link,
+a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+
+header{
+    width: 100vw;
+    height: 15vh;
+    background-color: #000000;
+}
+
+.container__header{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+header .logo{
+    width: 170px;
+}
+
+
+header img{
+    width: 100%;
+}
+
+.nav__links{
+    display: flex;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.nav__links li{
+    list-style: none;
+    font-weight: bold;
+    margin-left: 2rem;
+}
+
+.nav__links li a:hover {
+    color: #f1d413;
+    transition: 1s;
+}
+
+#slide{
+    height: 85vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../img/book.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container__slide{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin: auto;
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.container__slide p{
+    color: #ffdd00;
+}
+
+#sobre{
+    display: flex;
+    height: 100vh;
+    overflow-y:hidden ;
+}
+
+.container__left{
+    background-color: #1D1D1B;
+    width: 50vw;
+    height: 101vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sobre__livraria,.contato_livraria{
+    overflow: hidden;
+    width: 80%;
+    height: 50%;
+    font-family: 'Poppins', sans-serif;
+    color: #ffff;
+    font-weight: bolder;
+    
+}
+
+.sobre__livraria h1,.contato_livraria h1{
+    margin-left: 1.1rem;
+    margin-top: 1.2rem;
+    font-family: 'Fira Mono', monospace;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: #ffdd00;
+}
+
+.somos{
+font-size: 1.1rem;
+color: #ffdd00dc;
+}
+
+.sobre__livraria p{
+    text-align: left;
+    margin-top: 1rem;
+    margin-left: 1.1rem;
+}
+
+.container__img{
+display: flex;
+align-items: center;
+justify-items: center;   
+width: 50%;
+margin-left: -2rem;
+}
+
+.container__img img{
+    width: 100%;
+}
+
+#destaques{
+    background-color: #ffdd00;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container__destaques{
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.container__destaques h1{
+    text-align: center;
+    margin-bottom: 7rem;
+    margin-top: 2rem;
+    color: #000000;
+    font-size: 2rem;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 20vw;
+    height: 30vh;
+    box-shadow: 2px 2px 15px #474444;
+}
+
+.box h2{
+    text-align: center;
+}
+
+.box i{
+    font-size: 5rem;
+}
+
+#trabalhe_conosco{
+    display: flex;
+    height: 101vh;
+    color: #fff;
+}
+
+#formtrabalhe,#formcontato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 0.7rem;
+    margin-right: 2rem;
+    background-color: #ffffff;
+    color: #000;
+    font-weight: bold;
+}
+
+#formtrabalhe h1{
+    margin-top: 1rem;
+}
+.input,.textarea{
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    display: block;
+    width: 500px;
+    height: 40px;
+    border: solid 1px #0000005d;
+    padding: 0.3rem;
+}
+
+.textarea{
+    height: 100px;
+    resize: none;
+}
+
+input[type=text]:active, input[type=text]:focus,input[type=email],textarea{
+    outline: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.botao input{
+    margin-top: 1.2rem;
+    width: 150px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffff;
+    margin-top: 20px;
+    border: 0;
+    margin: 30px;
+    background-color: #0a9b16;
+}
+
+#contato{
+    display: flex;
+}
+
+.bg-white{
+    background-color: #ffdd00;
+}
+
+.contato_livraria{
+    height: 60%;
+}
+
+.contato_livraria h1{
+    color: #000;
+}
+
+#formcontato{
+    background-color: #ffdd00;
+}
+
+#formcontato .input,#formcontato .textarea{
+    width: 100%;
+    border: none;
+}
+
+footer{
+    background-color: #000000;
+    width: 100vw;
+    height: 200px;
+    color: #fff;
+}
+
+.container__footer{
+    font-size: 1rem;
+    padding: 10px;
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__info{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__info h4, .footer__info i, a{
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom:  1.2rem;
+}
+
+
+.footer__logo {
+    order: -1;
+    margin-top: 2rem;
+    width: 250px;
+}
+
+.footer__logo img{
+width: 100%;
+}
